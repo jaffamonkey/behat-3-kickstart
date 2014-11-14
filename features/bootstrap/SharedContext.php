@@ -3,14 +3,7 @@
 /**
  * @author Paul Littlebury <paul.littlebury@gmail.com>
  */
-use Behat\Behat\Exception\PendingException;
-use Behat\Mink\Element\NodeElement;
-use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Mink\Driver\Selenium2Driver;
-use Behat\Mink\Mink,
-    Behat\Mink\Session;
 
 // Require 3rd-party libraries here:
 require_once 'PHPUnit/Autoload.php';
@@ -79,20 +72,16 @@ class SharedContext extends MinkContext
     }
 
     /**
-     * @Given /^I am logged in as "([^"]*)"$/
+     * @Given /^I am logged in as "([^"]*)" with password "([^"]*)"$/
      */
-    public function iAmLoggedInAs($userid)
+    public function iAmLoggedInAs($userid,$password)
     {
         $text = "Filter by:";
         $this->getSession()->visit($this->locatePath('/'));
         sleep(1);
         $this->getSession()->getPage()->fillField('email', $userid);
-        $this->getSession()->getPage()->fillField('password', 'Password1');
+        $this->getSession()->getPage()->fillField('password', $password);
         $this->getSession()->getPage()->pressButton('submit');
-        $this->spin(function ($context) use ($text) {
-            $this->assertPageContainsText($text);
-            return true;
-        }, intval(10));
         sleep(3);
     }
 
@@ -170,22 +159,6 @@ class SharedContext extends MinkContext
         }
 
     }
-
-    public function spin($lambda, $wait = 10)
-    {
-        for ($i = 0; $i < $wait; $i++) {
-            try {
-                if ($lambda($this)) {
-                    return true;
-                }
-            } catch (Exception $e) {
-                // do nothing
-            }
-
-            sleep(1);
-        }
-    }
-    
     /**
      * @Then /^I should see user "([^"]*)" created$/
      */

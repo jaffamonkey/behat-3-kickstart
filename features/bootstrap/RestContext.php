@@ -1,7 +1,5 @@
 <?php
-use Behat\Behat\Context\BehatContext,
-    Behat\Behat\Exception\PendingException;
-use Symfony\Component\Yaml\Yaml;
+use Behat\Behat\Context\BehatContext;
 
 class RestContext extends BehatContext
 {
