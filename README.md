@@ -10,7 +10,7 @@ From Behat repo root run:-
 Before running behat ensure the following commands are executed :-
 * java -jar selenium-server-standalone-[version].jar
 
-To run tests:-
+To run tests (open another terminal window):-
 * bin/behat features
 
 First scenario will run in Goutte, second using Guzzle (for API), third using Firefox
