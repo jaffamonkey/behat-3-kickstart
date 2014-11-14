@@ -24,6 +24,7 @@ PERFORMANCE TEST
 
 Run Tests In Parallel (from Behat root folder)
 ----------------------------------------------
+
 $ apt-get install parallel
 $ java -jar selenium-server-standalone-2.43.1.jar --role hub
 $ find features -iname '*.feature'|  parallel --gnu -j5 --group bin/behat --ansi {}
