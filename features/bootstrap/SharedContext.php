@@ -7,10 +7,10 @@
 //use Behat\Mink\Element\NodeElement;
 //use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
-//use Behat\Gherkin\Node\PyStringNode;
-//use Behat\Mink\Driver\Selenium2Driver;
-//use Behat\Mink\Mink,
-//    Behat\Mink\Session;
+use Behat\Gherkin\Node\PyStringNode;
+use Behat\Mink\Driver\Selenium2Driver;
+use Behat\Mink\Mink,
+    Behat\Mink\Session;
 
 // Require 3rd-party libraries here:
 require_once 'PHPUnit/Autoload.php';
@@ -404,5 +404,12 @@ class SharedContext extends MinkContext
     {
         exec("sudo trickled -d " . $bandwidth . " -u " . $bandwidth . " -v");
         sleep(5);
+    }
+
+    /**
+     * @AfterStep @javascript
+     */
+    public function waitForPage()
+    {  $this->getSession()->wait('5000', '(0 === jQuery.active)');
     }
 }

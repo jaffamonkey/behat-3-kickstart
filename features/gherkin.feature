@@ -20,8 +20,15 @@ Feature: The Gherkin
     And I press "Search"
     Then count of "27" instances of "Behat" exists on page
 
-  @javascript
+  @javascript @phantomjs
   Scenario: The Gherkin Form Filling
-    Given I am on "/form-test"
-    When I select "MOption 1" from "Multiple Select"
-    And I additionally select "MOption 3" from "Multiple Select"
+    Given I am on "/form-test/"
+    And I fill in "text" with "some text"
+    And I check "checkbox"
+    And I select "Option 3" from "select"
+    And I check the "radio2" radio button
+    And I fill in "textarea" with "some text in text area"
+    And I check "checkbox1"
+    And I check "checkbox2"
+    And I check "checkbox3"
+    When I press "submit"
