@@ -31,4 +31,6 @@ Feature: The Gherkin
     And I check "checkbox1"
     And I check "checkbox2"
     And I check "checkbox3"
-    When I press "submit"
+    When I press "Save"
+    And I wait for page to update
+    Then I should see "OOOPS!"

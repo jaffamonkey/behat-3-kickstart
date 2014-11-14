@@ -3,9 +3,9 @@
 /**
  * @author Paul Littlebury <paul.littlebury@gmail.com>
  */
-//use Behat\Behat\Exception\PendingException;
-//use Behat\Mink\Element\NodeElement;
-//use Behat\Gherkin\Node\TableNode;
+use Behat\Behat\Exception\PendingException;
+use Behat\Mink\Element\NodeElement;
+use Behat\Gherkin\Node\TableNode;
 use Behat\MinkExtension\Context\MinkContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Mink\Driver\Selenium2Driver;
@@ -308,37 +308,6 @@ class SharedContext extends MinkContext
         return $result;
     }
 
-    /**
-     * @AfterStep
-     */
-    public function takeScreenshotAfterFailedStep(Behat\Behat\Event\StepEvent $event)
-    {
-        if ($event->getResult() === Behat\Behat\Event\StepEvent::FAILED) {
-            $driver = $this->getSession()->getDriver();
-            if ($driver instanceof Behat\Mink\Driver\Selenium2Driver) {
-                $step = $event->getStep();
-                $path = array(
-                    'date' => date("Ymd-Hi"),
-                    'feature' => $step->getParent()->getFeature()->getTitle(),
-                    'scenario' => $step->getParent()->getTitle(),
-                    'step' => $step->getType() . ' ' . $step->getText(),
-                );
-                $path2 = preg_replace('/[^\-\.\w]/', '_', $path);
-                $path3 =
-                $filename = '/tmp/behat/' . implode('/', $path2) . '.jpg';
-
-                // Create directories if needed.
-                if (!@is_dir(dirname($filename))) {
-                    @mkdir(dirname($filename), 0775, TRUE);
-                }
-
-                file_put_contents($filename, $driver->getScreenshot());
-                if (PHP_OS === "Darwin" && (bool)getenv('SHOW_SNAPSHOT') === TRUE && PHP_SAPI === "cli") {
-                    exec('open -a "Preview.app" ' . $filename);
-                }
-            }
-        }
-    }
 
     /**
      * @Given /^I take a screenshot of current page "([^"]*)"$/
@@ -409,7 +378,22 @@ class SharedContext extends MinkContext
     /**
      * @AfterStep @javascript
      */
-    public function waitForPage()
-    {  $this->getSession()->wait('5000', '(0 === jQuery.active)');
+    public function checkForJquery()
+{
+$this->getSession()->wait(5000, 'typeof window.jQuery == "function"');
+}
+
+    /**
+     * @Given /^I wait for page to update$/
+     */
+    public function iWaitForPageToUpdate()
+    {
+//        $text = "event-summary";
+//        $this->spin(function ($context) use ($text) {
+//            $this->assertElementOnPage($text);
+//            return true;
+//        }, intval(10));
+        sleep(3);
     }
+
 }
