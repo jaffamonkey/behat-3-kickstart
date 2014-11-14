@@ -1,0 +1,20 @@
+{
+    "name": "opg project",
+    "require": {
+        "behat/behat": "2.5.*@stable",
+        "behat/mink": "1.5.*",
+        "behat/mink-goutte-driver": "*",
+        "behat/mink-selenium2-driver": "*",
+        "behat/mink-extension": "*",
+        "phpunit/phpunit": "~3.7.19",
+        "phpunit/dbunit": "*",
+        "guzzle/guzzle": "2.4.*"
+    },
+    "minimum-stability": "dev",
+    "config": {
+        "bin-dir": "bin/",
+        "github-oauth": {
+            "github.com": "1f611e660bef4c34fe4e6edde0a61ee9c3c606ea"
+        }
+    }
+}
