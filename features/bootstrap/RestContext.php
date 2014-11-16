@@ -1,5 +1,5 @@
 <?php
-use Behat\Behat\Context\BehatContext;
+use Behat\Behat\Context\Context;
 
 class RestContext extends BehatContext
 {

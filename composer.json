@@ -1,14 +1,15 @@
 {
-    "name": "opg project",
+    "name": "any project",
     "require": {
-        "behat/behat": "2.5.*@stable",
-        "behat/mink": "1.5.*",
+        "behat/behat": "3.*",
+        "behat/mink": "*",
+        "behat/mink-extension": "~2.0",
+        "guzzle/guzzle": "*"
+    },
+
+    "require-dev": {
         "behat/mink-goutte-driver": "*",
-        "behat/mink-selenium2-driver": "*",
-        "behat/mink-extension": "*",
-        "phpunit/phpunit": "~3.7.19",
-        "phpunit/dbunit": "*",
-        "guzzle/guzzle": "2.4.*"
+        "behat/mink-selenium2-driver": "*"
     },
     "minimum-stability": "dev",
     "config": {

@@ -164,8 +164,8 @@ class SharedContext extends MinkContext
      */
     public function iShouldSeePersonCreated($email)
     {
-        $pdo = new PDO('pgsql:user=opg;dbname=db_name;password=db_password;host=localhost');
-        $sql = $pdo->query("SELECT email from persons ORDER BY id DESC LIMIT 1;");
+        $pdo = new PDO('pgsql:user=username;dbname=db_name;password=db_password;host=localhost');
+        $sql = $pdo->query("SELECT email from users ORDER BY id DESC LIMIT 1;");
         $sql2 = $sql->fetch(PDO::FETCH_OBJ);
         $sql3 = $sql2->email;
         assertEquals($sql3, $email);
@@ -295,7 +295,7 @@ class SharedContext extends MinkContext
      */
     public function iWantToLoadTestApiEndpointWithConcurrentUsersWithMaximumOfRequestsInParallel($apiEndpoint, $numberUsers, $numberRequests, $testDuration)
     {
-        shell_exec("ab -H \"X-USER-ID:admin@example.com\" -c " . $numberUsers . "1 -g gnuplot.tsv -k -n " . $numberRequests . " 1 -r -t " . $testDuration . " -v 4 " . $apiEndpoint);
+        shell_exec("ab -H \"X-USER-ID:test@test.com\" -c " . $numberUsers . "1 -g gnuplot.tsv -k -n " . $numberRequests . " 1 -r -t " . $testDuration . " -v 4 " . $apiEndpoint);
         $testWait = ($testDuration + 10);
         sleep($testWait);
     }

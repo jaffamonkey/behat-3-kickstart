@@ -1,55 +1,25 @@
 default:
-    paths:
-        features: %behat.paths.base%/features      
-        bootstrap: %behat.paths.features%/bootstrap
-    filters:
-#      tags: "@ci"
-    context:
-        # In most cases, here is what you need to change for your projects.
-        parameters:
-            base_url: http://jaffamonkey.com
-            database_url: localhost
-            directory_url: '/var/www/'
-            database_port: 5432
-            be_api_url: http://jaffamonkey.com
-            paths:
-                base:      %behat.paths.base%      # All following paths are relative to this base path.
-                bootstrap: features/bootstrap      # Not in use. Location to load more subcontext instances from.
+    suites:
+        default:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
     extensions:
-        Behat\MinkExtension\Extension:
-           base_url: 'http://jaffamonkey.com'
-           browser_name: firefox
-           javascript_session: selenium2
-           default_session: goutte
-#           selenium2: ~
-           goutte: ~
-           selenium2:
-                capabilities:
-                  version: ''
-                wd_host: "http://127.0.0.1:4444/wd/hub"
-#                capabilities: { "browser": "firefox", "version" : "3.0"}
-doctrine:
-    dbal:
-        driver:   %database_driver%
-        host:     %database_host%
-        port:     %database_port%
-        dbname:   %database_name%_%kernel.environment%
-        user:     %database_user%
-        password: %database_password%
-        charset:  UTF8
-    orm:
-        auto_mapping: true
-        
+        Behat\MinkExtension\ServiceContainer\MinkExtension:
+            base_url: 'http://jaffamonkey.com'
+            files_path: 'fixtures/files'
+            goutte: ~
+            selenium2: ~
+
 phantomjs:
-    paths:
-        features: %behat.paths.base%/features       
-        bootstrap: %behat.paths.features%/bootstrap
+    suites:
+        default:
+            contexts:
+                - Behat\MinkExtension\Context\MinkContext
     extensions:
-        Behat\MinkExtension\Extension:
-             base_url: 'http://jaffamonkey.com'
-             default_session: selenium2
-             javascript_session: selenium2
-             browser_name: phantomjs
-             selenium2:
+        Behat\MinkExtension\ServiceContainer\MinkExtension:
+            base_url: 'http://jaffamonkey'
+            files_path: 'fixtures/files'
+            goutte: ~
+            selenium2:
                  wd_host: "http://127.0.0.1:4444/wd/hub"
                  capabilities: { "browser": "phantomjs", "version" : "1.9.7"}

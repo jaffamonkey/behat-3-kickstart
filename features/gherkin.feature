@@ -9,7 +9,7 @@ Feature: The Gherkin
 
   @api
   Scenario: The Gherkin API test
-    Given I GET request "/api/get_recent_posts"
+    Given I send GET request "/api/get_recent_posts"
     Then the response status is 200
     And the status property equals "ok"
 

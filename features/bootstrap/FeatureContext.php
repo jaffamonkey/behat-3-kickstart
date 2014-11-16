@@ -1,6 +1,10 @@
 <?php
-use Behat\Behat\Context\BehatContext,
-    Guzzle\Service\Client,
+
+use Behat\Behat\Context\Context;
+use Behat\Behat\Context\SnippetAcceptingContext;
+use Behat\Gherkin\Node\PyStringNode;
+use Behat\Gherkin\Node\TableNode;
+use Guzzle\Service\Client,
     Guzzle\Http\Exception\BadResponseException;
 
 require_once 'PHPUnit/Autoload.php';
@@ -9,7 +13,7 @@ require_once 'PHPUnit/Framework/Assert/Functions.php';
 /**
  * Features context.
  */
-class FeatureContext extends BehatContext
+class FeatureContext implements Context, SnippetAcceptingContext
 {
     /**
      * The HTTP Client.
