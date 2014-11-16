@@ -1,12 +1,11 @@
 {
     "name": "any project",
     "require": {
-        "behat/behat": "3.*",
-        "behat/mink": "*",
-        "behat/mink-extension": "~2.0",
-        "guzzle/guzzle": "*"
+        "sanpi/behatch-contexts": "dev-master",
+        "guzzle/guzzle": "*",
+        "phpunit/phpunit": "3.7.27",
+        "phpunit/dbunit": "*"
     },
-
     "require-dev": {
         "behat/mink-goutte-driver": "*",
         "behat/mink-selenium2-driver": "*"
