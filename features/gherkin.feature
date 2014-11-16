@@ -5,7 +5,7 @@ Feature: The Gherkin
     Given I am on "/"
     And I fill in "Behat" for "s"
     And I press "Search"
-    Then count of "27" instances of "Behat" exists on page
+    Then I should see "Behat"
 
   @api
   Scenario: The Gherkin API test
