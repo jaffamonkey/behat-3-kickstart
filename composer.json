@@ -4,7 +4,8 @@
         "sanpi/behatch-contexts": "dev-master",
         "guzzle/guzzle": "*",
         "phpunit/phpunit": "3.7.27",
-        "phpunit/dbunit": "*"
+        "phpunit/dbunit": "*",
+        "kriswallsmith/buzz": "*"
     },
     "require-dev": {
         "behat/mink-goutte-driver": "*",

@@ -1,11 +1,12 @@
 <?php
 
-use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
+use Behat\MinkExtension\Context\MinkContext;
 use Guzzle\Service\Client,
     Guzzle\Http\Exception\BadResponseException;
+use Behat\CommonContexts;
 
 require_once 'PHPUnit/Autoload.php';
 require_once 'PHPUnit/Framework/Assert/Functions.php';
@@ -13,7 +14,7 @@ require_once 'PHPUnit/Framework/Assert/Functions.php';
 /**
  * Features context.
  */
-class FeatureContext extends BehatContext
+class FeatureContext extends MinkContext implements SnippetAcceptingContext
 {
     /**
      * The HTTP Client.
@@ -28,6 +29,7 @@ class FeatureContext extends BehatContext
     protected $response;
 
     protected $json_response;
+    private $_response;
 
     /**
      * Initializes context.
@@ -63,6 +65,20 @@ class FeatureContext extends BehatContext
             "Timeout thrown by " . $backtrace[1]['class'] . "::" . $backtrace[1]['function'] . "()\n" .
             $backtrace[1]['file'] . ", line " . $backtrace[1]['line']
         );
+    }
+
+    /**
+     * @Then /^the ([A-Za-z]+) property equals "([^"]*)"$/
+     */
+    public function theNamePropertyEquals($name, $value)
+    {
+        $data = $this->_response->json();
+        if (!isset($data[$name])) {print_r($data);
+            throw new Exception("$name property does not exist in response.");
+        }
+        if ($data[$name] != $value) {
+            throw new Exception("$name does not match $value in response.");
+        }
     }
 
 }?>

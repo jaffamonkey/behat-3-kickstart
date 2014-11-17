@@ -6,7 +6,7 @@ default:
                 - behatch:browser:
                     timeout: 1
                 - behatch:debug:
-                    screenshotDir: "screenshots"
+                    screenshotDir: "."
                 - behatch:json:
                     evaluationMode: javascript
                 - behatch:rest

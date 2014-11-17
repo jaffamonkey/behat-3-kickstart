@@ -1,4 +1,4 @@
-Feature : quick Behat test
+Feature: quick Behat test
 
 Scenario: The Gherkin Headless UI
 Given I am on "/"
