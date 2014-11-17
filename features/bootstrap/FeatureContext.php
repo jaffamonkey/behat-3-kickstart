@@ -1,20 +1,17 @@
 <?php
 
 use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
-use Behat\MinkExtension\Context\MinkContext;
+use Behat\Behat\Context\Context;
 use Guzzle\Service\Client,
     Guzzle\Http\Exception\BadResponseException;
-use Behat\CommonContexts;
 
-require_once 'PHPUnit/Autoload.php';
-require_once 'PHPUnit/Framework/Assert/Functions.php';
+require_once '../../vendor/phpunit/phpunit/PHPUnit/Autoload.php';
+require_once '../../vendor/phpunit/phpunit/PHPUnit/Framework/Assert/Functions.php';
 
 /**
  * Features context.
  */
-class FeatureContext implements SnippetAcceptingContext
+class FeatureContext implements Context, SnippetAcceptingContext
 {
     /**
      * The HTTP Client.
@@ -39,13 +36,13 @@ class FeatureContext implements SnippetAcceptingContext
     public function __construct(array $parameters)
     {
         $this->parameters = $parameters;
-        $this->client = new Client( $parameters['base_url'] );
+        $this->client = new Client($parameters['base_url']);
+        new SharedContext($parameters['base_url']);
     }
 
-    public function spin ($lambda, $wait = 60)
+    public function spin($lambda, $wait = 60)
     {
-        for ($i = 0; $i < $wait; $i++)
-        {
+        for ($i = 0; $i < $wait; $i++) {
             try {
                 if ($lambda($this)) {
                     return true;
@@ -71,7 +68,8 @@ class FeatureContext implements SnippetAcceptingContext
     public function theNamePropertyEquals($name, $value)
     {
         $data = $this->_response->json();
-        if (!isset($data[$name])) {print_r($data);
+        if (!isset($data[$name])) {
+            print_r($data);
             throw new Exception("$name property does not exist in response.");
         }
         if ($data[$name] != $value) {
@@ -79,4 +77,6 @@ class FeatureContext implements SnippetAcceptingContext
         }
     }
 
-}?>
+}
+
+?>

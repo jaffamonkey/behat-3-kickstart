@@ -6,6 +6,7 @@ Feature: The Gherkin
     And I fill in "Behat" for "s"
     And I press "Search"
     Then I should see "Behat"
+    And count of "27" instances of "Behat" exists on page
 
   @api
   Scenario: The Gherkin API test
@@ -29,6 +30,7 @@ Feature: The Gherkin
     And I fill in "text" with "some text"
     And I check "checkbox"
     And I select "Option 3" from "select"
+    And I check the "radio2" radio button
     And I fill in "textarea" with "some text in text area"
     And I check "checkbox1"
     And I check "checkbox2"

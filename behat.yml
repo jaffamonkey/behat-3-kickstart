@@ -14,10 +14,11 @@ default:
                     root: "."
                 - behatch:table
                 - behatch:xml
+                - SharedContext
     extensions:
         Behat\MinkExtension\ServiceContainer\MinkExtension:
             base_url: 'http://jaffamonkey.com'
-            files_path: 'fixtures/files'
+            files_path: 'vendor'
             goutte: ~
             selenium2: ~
         Sanpi\Behatch\Extension: ~
