@@ -14,7 +14,7 @@ require_once 'PHPUnit/Framework/Assert/Functions.php';
 /**
  * Features context.
  */
-class FeatureContext extends MinkContext implements SnippetAcceptingContext
+class FeatureContext implements SnippetAcceptingContext
 {
     /**
      * The HTTP Client.
@@ -39,8 +39,6 @@ class FeatureContext extends MinkContext implements SnippetAcceptingContext
     public function __construct(array $parameters)
     {
         $this->parameters = $parameters;
-//        $this->useContext('shared_context', new SharedContext($parameters));
-//        $this->useContext('rest_context', new RestContext($parameters));
         $this->client = new Client( $parameters['base_url'] );
     }
 

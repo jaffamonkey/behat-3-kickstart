@@ -10,16 +10,18 @@ Feature: The Gherkin
   @api
   Scenario: The Gherkin API test
     Given I send a GET request to "/wp-json/posts"
+    And the JSON node "[0].status" should exist
     Then the response status code should be 200
-    And the JSON node "status" should exist
-    And the JSON node "title" should contain "Some basic CLI web performance tools"
-    Then the JSON node "post" should have 4 elements
+    Then the response should be in JSON
+    And the JSON node "[0].status" should contain "publish"
+    And the response should expire in the future
 
   @javascript @phantomjs
   Scenario: The Gherkin Browser UI
     Given I am on "/"
     And I fill in "Behat" for "s"
     And I press "Search"
+    Then I should see "Behat"
 
   @javascript @phantomjs
   Scenario: The Gherkin Form Filling
