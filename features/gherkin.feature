@@ -37,3 +37,20 @@ Feature: The Gherkin
     And I check "checkbox3"
     When I press "Save"
     Then I should see "OOOPS!"
+
+
+  @javascript @phantomjs
+  Scenario: The Gherkin Form Filling Eg2
+    Given I am on "/form-test/"
+    When I fill form with:
+      | text				| some text			|
+      | checkbox1			| YES					|
+      | checkbox2			| YES					|
+      | checkbox3		| YES					|
+      | select			| Option 3				|
+    Then the "text" field should contain "some text"
+    And the "checkbox1" checkbox should be checked
+    And the "checkbox2" checkbox should be checked
+    And the "checkbox3" checkbox should be checked
+    And the "select" field should contain "3"
+

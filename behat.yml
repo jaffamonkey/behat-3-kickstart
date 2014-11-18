@@ -12,8 +12,8 @@ default:
                 - behatch:rest
                 - behatch:system:
                     root: "."
-                - behatch:table
-                - behatch:xml
+#                - behatch:table
+#                - behatch:xml
                 - SharedContext
     extensions:
         Behat\MinkExtension\ServiceContainer\MinkExtension:
