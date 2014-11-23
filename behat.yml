@@ -2,31 +2,20 @@ default:
     suites:
         default:
             contexts:
-                - Behat\MinkExtension\Context\MinkContext
-                - behatch:browser:
-                    timeout: 1
-                - behatch:debug:
-                    screenshotDir: "."
-                - behatch:json:
-                    evaluationMode: javascript
-                - behatch:rest
-                - behatch:system:
-                    root: "."
-#                - behatch:table
-#                - behatch:xml
-                - SharedContext
+              - Behat\MinkExtension\Context\MinkContext
+              - SharedContext
+              - FeatureContext
     extensions:
-        Behat\MinkExtension\ServiceContainer\MinkExtension:
+        Behat\MinkExtension:
             base_url: 'http://jaffamonkey.com'
             files_path: 'vendor'
             goutte: ~
             selenium2: ~
-        Sanpi\Behatch\Extension: ~
 phantomjs:
     suites:
         default:
             contexts:
-                - Behat\MinkExtension\Context\MinkContext
+              - Behat\MinkExtension\Context\MinkContext
     extensions:
         Behat\MinkExtension\ServiceContainer\MinkExtension:
             base_url: 'http://jaffamonkey.com'

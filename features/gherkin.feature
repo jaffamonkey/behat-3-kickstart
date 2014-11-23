@@ -1,6 +1,6 @@
 Feature: The Gherkin
 
-  @phantomjs
+  @phantomjs @api
   Scenario: The Gherkin Headless UI
     Given I am on "/"
     And I fill in "Behat" for "s"
@@ -10,12 +10,11 @@ Feature: The Gherkin
 
   @api
   Scenario: The Gherkin API test
-    Given I send a GET request to "/wp-json/posts"
-    And the JSON node "[0].status" should exist
-    Then the response status code should be 200
-    Then the response should be in JSON
-    And the JSON node "[0].status" should contain "publish"
-    And the response should expire in the future
+    Given I request "http://jaffamonkey.com/wp-json/posts/11123"
+    Then the response should be JSON
+    And the response status code should be 200
+    And the response has a "status" property
+    And the "status" property equals "publish"
 
   @javascript @phantomjs
   Scenario: The Gherkin Browser UI
