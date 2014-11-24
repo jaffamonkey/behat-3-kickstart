@@ -32,7 +32,8 @@ class FeatureContext implements Context, SnippetAcceptingContext
 
     public function __construct()
     {
-        $client = new Client();
+       $this->baseUrl = 'http://jaffamonkey.com';
+        $client = new Client(['base_url' => 'http://jaffamonkey.com']);
         $this->_client = $client;
     }
 
@@ -142,6 +143,7 @@ class FeatureContext implements Context, SnippetAcceptingContext
         } else {
             throw new Exception("Response was not JSON\n" . $this->_response->getBody(true));
         }
+        echo $data->$propertyName;
     }
 }
 

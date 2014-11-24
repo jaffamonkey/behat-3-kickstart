@@ -2,10 +2,16 @@ default:
     suites:
         default:
             contexts:
-              - Behat\MinkExtension\Context\MinkContext
+              - Behat\MinkExtension\Context\MinkContext:
+                base_url: http://jaffamonkey.com
               - SharedContext
               - FeatureContext
     extensions:
+        chartinger\Behat\TwigReportExtension\Extension:
+          output:
+            file: ./report.html
+          templates:
+            file: default.twig
         Behat\MinkExtension:
             base_url: 'http://jaffamonkey.com'
             files_path: 'vendor'
