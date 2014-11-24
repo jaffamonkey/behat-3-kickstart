@@ -4,7 +4,7 @@
 "behat/behat": "3.*",
 "behat/mink": "*",
 "behat/mink-extension": "~2.0",
- "guzzlehttp/guzzle": "*",
+"guzzlehttp/guzzle": "*",
 "phpunit/phpunit": "3.7.27",
 "phpunit/dbunit": "*",
 "behat/mink-zombie-driver": "~1.2"
