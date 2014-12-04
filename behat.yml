@@ -17,16 +17,3 @@ default:
             files_path: 'vendor'
             goutte: ~
             selenium2: ~
-phantomjs:
-    suites:
-        default:
-            contexts:
-              - Behat\MinkExtension\Context\MinkContext
-    extensions:
-        Behat\MinkExtension\ServiceContainer\MinkExtension:
-            base_url: 'http://jaffamonkey.com'
-            files_path: 'fixtures/files'
-            goutte: ~
-            selenium2:
-                 wd_host: "http://127.0.0.1:4444/wd/hub"
-                 capabilities: { "browser": "phantomjs", "version" : "1.9.7"}

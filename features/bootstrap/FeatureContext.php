@@ -32,9 +32,24 @@ class FeatureContext implements Context, SnippetAcceptingContext
 
     public function __construct()
     {
+//        $this->_parameters = $parameters;
+//        $baseUrl = $this->getParameter('base_url');
+//        $client = new Client(['base_url' => $baseUrl]);
+//        $this->_client = $client;
+
        $this->baseUrl = 'http://jaffamonkey.com';
         $client = new Client(['base_url' => 'http://jaffamonkey.com']);
         $this->_client = $client;
+    }
+
+    public function getParameter($name)
+    {
+        if (count($this->_parameters) === 0) {
+            throw new \Exception('Parameters not loaded!');
+        } else {
+            $parameters = $this->_parameters;
+            return (isset($parameters[$name])) ? $parameters[$name] : null;
+        }
     }
 
     public function spin($lambda, $wait = 60)
@@ -57,15 +72,6 @@ class FeatureContext implements Context, SnippetAcceptingContext
             "Timeout thrown by " . $backtrace[1]['class'] . "::" . $backtrace[1]['function'] . "()\n" .
             $backtrace[1]['file'] . ", line " . $backtrace[1]['line']
         );
-    }
-    public function getParameter($name)
-    {
-        if (count($this->_parameters) === 0) {
-            throw new \Exception('Parameters not loaded!');
-        } else {
-            $parameters = $this->_parameters;
-            return (isset($parameters[$name])) ? $parameters[$name] : null;
-        }
     }
 
     /**
