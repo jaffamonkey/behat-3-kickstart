@@ -1,4 +1,3 @@
-behat-skeleton
 ==============
 RUNNING BEHAT TESTS
 
