@@ -35,7 +35,7 @@ Feature: The Gherkin
     And I check "checkbox2"
     And I check "checkbox3"
     When I press "Save"
-    Then I should see "OOOPS!"
+    Then I should see "Error"
 
 
   @javascript @phantomjs
