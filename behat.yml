@@ -7,6 +7,7 @@ default:
               - SharedContext
               - FeatureContext
     extensions:
+        SensioLabs\Behat\PageObjectExtension: ~
         chartinger\Behat\TwigReportExtension\Extension:
           output:
             file: ./report.html
