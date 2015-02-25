@@ -1,20 +1,16 @@
 {
 "name": "behat mink skeleton",
 "require": {
-        "behat/behat":  "3.0.*",
-        "behat/mink-extension": "~2.0@dev",
-        "behat/mink-browserkit-driver": "~1.1@dev",
-        "behat/mink-goutte-driver": "*@dev",
-        "behat/mink-selenium2-driver": "1.*",
-        "guzzlehttp/guzzle": "5.*",
-        "chartinger/behat-twig-report-extension": "*@dev",
-        "phpunit/phpunit": "4.*@stable",
-        "behat/web-api-extension": "~1.0@dev"
-},
-"require-dev": {
-"behat/mink-goutte-driver": "*",
-"behat/mink-selenium2-driver": "*",
-"chartinger/behat-twig-report-extension": "*@dev"
+  "behat/behat":  "3.0.*",
+  "behat/mink-extension": "~2.0@dev",
+  "behat/mink-browserkit-driver": "~1.1@dev",
+  "behat/mink-goutte-driver": "*@dev",
+  "behat/mink-selenium2-driver": "1.*",
+  "guzzlehttp/guzzle": "4.*",
+  "chartinger/behat-twig-report-extension": "*@dev",
+  "phpunit/phpunit": "4.*@stable",
+  "behat/web-api-extension": "~1.0@dev",
+  "behat/mink-zombie-driver": "~1.2"
 },
 "minimum-stability": "dev",
 "config": {

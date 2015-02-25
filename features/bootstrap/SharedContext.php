@@ -7,13 +7,6 @@ use Behat\MinkExtension\Context\RawMinkContext;
 use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Gherkin\Node\PyStringNode;
 use Behat\Gherkin\Node\TableNode;
-/**
- * Behat context class.
- */
-require_once __DIR__ . '/../../vendor/phpunit/phpunit/PHPUnit/Autoload.php';
-require_once __DIR__ . '/../../vendor/phpunit/phpunit/PHPUnit/Framework/Assert/Functions.php';
-require_once __DIR__ . '/../../vendor/phpunit/dbunit/PHPUnit/Extensions/Database/TestCase.php';
-//
 
 define('BEHAT_ERROR_REPORTING', E_ERROR | E_WARNING | E_PARSE);
 
@@ -378,6 +371,10 @@ class SharedContext extends RawMinkContext implements SnippetAcceptingContext
                 }
             }
 
+            if (empty($field)) {
+                throw new \Exception('Field not found: ' . $fieldSelector);
+            }
+
             $tag = strtolower($field->getTagName());
 
             if ($tag == 'textarea') {
@@ -392,14 +389,12 @@ class SharedContext extends RawMinkContext implements SnippetAcceptingContext
                 }
             } elseif ($tag == 'input') {
                 $type = strtolower($field->getAttribute('type'));
-                if ($type == 'checkbox' || $type == 'radio') {
+                if ($type == 'checkbox') {
                     if (strtolower($value) == 'yes') {
                         $page->checkField($fieldSelector);
                     } else {
                         $page->uncheckField($fieldSelector);
                     }
-//                } elseif ($type == 'radio') {
-//                    // TODO: handle radio
                 } else {
                     $page->fillField($fieldSelector, $value);
                 }
@@ -429,7 +424,7 @@ class SharedContext extends RawMinkContext implements SnippetAcceptingContext
             }
 
             if (null === $node) {
-                throw new \Behat\Mink\Exception\ElementNotFoundException($this->getSession(), 'form field', 'id|name|label|value', $field);
+                throw new \Exception($this->getSession(), 'form field', 'id|name|label|value', $field);
             }
 
             if ($node->getTagName() == 'input' && in_array($node->getAttribute('type'), array('checkbox', 'radio'))) {
@@ -442,11 +437,11 @@ class SharedContext extends RawMinkContext implements SnippetAcceptingContext
 
                 $options = array();
                 $optionNodes = $this->getSession()->getDriver()->find($node->getXpath() . "/option");
-                foreach($optionNodes as $optionNode) {
+                foreach ($optionNodes as $optionNode) {
                     $options[$optionNode->getValue()] = $optionNode->getText();
                     $options[$optionNode->getText()] = $optionNode->getText();
                 }
-                foreach($actual as $index => $optionValue) {
+                foreach ($actual as $index => $optionValue) {
                     if (isset($options[$optionValue])) {
                         $actual[$index] = $options[$optionValue];
                     }
@@ -468,7 +463,7 @@ class SharedContext extends RawMinkContext implements SnippetAcceptingContext
 
             if (!preg_match($regex, $actual)) {
                 $message = sprintf('The field "%s" value is "%s", but "%s" expected.', $field, $actual, $value);
-                throw new \Behat\Mink\Exception\ExpectationException($message, $this->getSession());
+                throw new \Exception($message);
             }
         }
     }
@@ -507,7 +502,8 @@ class SharedContext extends RawMinkContext implements SnippetAcceptingContext
 
         if (!preg_match($regex, $actual)) {
             $message = sprintf('The field "%s" value is "%s", but "%s" expected.', $field, $actual, $value);
-            throw new \Behat\Mink\Exception\ExpectationException($message, $this->getSession());
+
+            throw new \Exception($message);
         }
     }
 
