@@ -10,7 +10,8 @@
   "chartinger/behat-twig-report-extension": "*@dev",
   "phpunit/phpunit": "4.*@stable",
   "behat/web-api-extension": "~1.0@dev",
-  "behat/mink-zombie-driver": "~1.2"
+  "behat/mink-zombie-driver": "~1.2",
+  "sensiolabs/behat-page-object-extension": "~2.0"
 },
 "minimum-stability": "dev",
 "config": {

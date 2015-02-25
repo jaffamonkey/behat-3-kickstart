@@ -4,9 +4,6 @@ use Behat\Behat\Context\SnippetAcceptingContext;
 use Behat\Behat\Context\Context;
 use GuzzleHttp\Client;
 
-require_once __DIR__ . '/../../vendor/phpunit/phpunit/PHPUnit/Autoload.php';
-require_once __DIR__ . '/../../vendor/phpunit/phpunit/PHPUnit/Framework/Assert/Functions.php';
-require_once __DIR__ . '/../../vendor/phpunit/dbunit/PHPUnit/Extensions/Database/TestCase.php';
 
 /**
  * Features context.
