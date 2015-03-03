@@ -1,13 +1,25 @@
 default:
-    suites:
-        default:
-            contexts:
-              - Behat\MinkExtension\Context\MinkContext:
-                base_url: http://jaffamonkey.com
-              - SharedContext
-              - FeatureContext
-    extensions:
+  suites:
+    default:
+#      paths:    [ %paths.base%/features ]
+      contexts:
+        - Behat\WebApiExtension\Context\WebApiContext:
+          base_url: 'http://jaffamonkey.com'
+        - Behat\MinkExtension\Context\MinkContext:
+          base_url: 'http://jaffamonkey.com'
+          files_path: 'vendor'
+          goutte: ~
+          selenium2: ~
+        - FeatureContext
+        - HomepageContext
+        - ProfileformContext
+  extensions:
+        Behat\WebApiExtension:
+          base_url: 'http://jaffamonkey.com'
         SensioLabs\Behat\PageObjectExtension: ~
+#         namespaces:
+#           page: [features\bootstrap\Page]
+#           element: [features\bootstrap]
         chartinger\Behat\TwigReportExtension\Extension:
           output:
             file: ./report.html
