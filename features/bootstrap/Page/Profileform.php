@@ -4,8 +4,6 @@ namespace Page;
 
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
 use Behat\Gherkin\Node\TableNode;
-use Behat\Gherkin\Node\PyStringNode;
-
 
 class Profileform extends Page
 {
@@ -129,44 +127,6 @@ class Profileform extends Page
                 $message = sprintf('The field "%s" value is "%s", but "%s" expected.', $field, $actual, $value);
                 throw new \Exception($message, $this->getSession());
             }
-        }
-    }
-
-
-    /**
-     * @Given /^I fill in "(?P<field>(?:[^"]|\\")*)" with:$/
-     */
-    public function iFillInWith($field, PyStringNode $string)
-    {
-        $field = $this->fixStepArgument($field);
-        $value = $this->fixStepArgument($string->getRaw());
-        $this->getSession()->getPage()->fillField($field, $value);
-    }
-
-    /**
-     * @Given /^the "(?P<field>[^"]*)" field should contain:$/
-     */
-    public function assertFieldShouldContain($field, PyStringNode $string)
-    {
-        $this->fieldValueEquals($field, $string->getRaw());
-    }
-
-    /**
-     * Checks, that form field with specified id|name|label|value has specified value.
-     *
-     * @Then /^the "(?P<field>(?:[^"]|\\")*)" multiple field should contain "(?P<value>(?:[^"]|\\")*)"$/
-     */
-    public function assertFieldContains($field, $value)
-    {
-        $node = $this->assertSession()->fieldExists($field);
-        $actual = $node->getValue();
-        if (is_array($actual)) {
-            $actual = join(',', $actual);
-        }
-        $regex = '/^' . preg_quote($value, '$/') . '/ui';
-        if (!preg_match($regex, $actual)) {
-            $message = sprintf('The field "%s" value is "%s", but "%s" expected.', $field, $actual, $value);
-            throw new \Exception($message, $this->getSession());
         }
     }
 

@@ -2,8 +2,6 @@
 
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
 use Behat\Gherkin\Node\TableNode;
-use SensioLabs\Behat\PageObjectExtension\Context;
-use Page\Profileform;
 
 class ProfileformContext extends PageObjectContext
 

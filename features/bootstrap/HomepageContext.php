@@ -2,6 +2,7 @@
 
 
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
+use Page\Homepage;
 
 class HomepageContext extends PageObjectContext
 {
@@ -10,6 +11,6 @@ class HomepageContext extends PageObjectContext
      */
     public function iAmLoggedInAsWithPassword($email, $password)
     {
-        $this->getPage('Page/Homepage')->loginCredentials($email, $password);
+        $this->getPage('Homepage')->loginCredentials($email, $password);
     }
 }

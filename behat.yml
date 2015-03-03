@@ -17,9 +17,6 @@ default:
         Behat\WebApiExtension:
           base_url: 'http://jaffamonkey.com'
         SensioLabs\Behat\PageObjectExtension: ~
-#         namespaces:
-#           page: [features\bootstrap\Page]
-#           element: [features\bootstrap]
         chartinger\Behat\TwigReportExtension\Extension:
           output:
             file: ./report.html
