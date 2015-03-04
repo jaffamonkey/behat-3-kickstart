@@ -18,7 +18,6 @@ class FeatureContext extends RawMinkContext implements Context, SnippetAccepting
      */
     public function __construct()
     {
-
     }
 
     /**

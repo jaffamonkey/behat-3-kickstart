@@ -11,6 +11,7 @@ class Profileform extends Page
      * Initializes context.
      * Every scenario gets it's own context object.
      */
+
     public function __construct()
     {
     }
@@ -22,40 +23,47 @@ class Profileform extends Page
      */
     public function fillForm(TableNode $table)
     {
+        $page = $this;
 
         foreach ($table->getRows() as $row) {
             list($fieldSelector, $value) = $row;
-            $field = $this->findField($fieldSelector);
+
+            $field = $page->findField($fieldSelector);
             if (empty($field)) {
-                $field = $this->getSession()->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $fieldSelector . '")]');
+                $field = $this->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $fieldSelector . '")]');
                 if (!empty($field)) {
                     $field = current($field);
                 }
             }
+
             if (empty($field)) {
-                throw new \Exception('Field not found: ' . $fieldSelector);
+                die('Field not found ' . $fieldSelector. PHP_EOL);
             }
+
             $tag = strtolower($field->getTagName());
+
             if ($tag == 'textarea') {
-                $this->fillField($fieldSelector, $value);
+                $page->fillField($fieldSelector, $value);
             } elseif ($tag == 'select') {
                 if ($field->hasAttribute('multiple')) {
                     foreach (explode(',', $value) as $index => $option) {
-                        $this->selectFieldOption($fieldSelector, trim($option), true);
+                        $page->selectFieldOption($fieldSelector, trim($option), true);
                     }
                 } else {
-                    $this->selectFieldOption($fieldSelector, $value);
+                    $page->selectFieldOption($fieldSelector, $value);
                 }
             } elseif ($tag == 'input') {
                 $type = strtolower($field->getAttribute('type'));
-                if ($type == 'checkbox') {
+                if ($type == 'checkbox' || $type == 'radio') {
                     if (strtolower($value) == 'yes') {
-                        $this->checkField($fieldSelector);
+                        $page->checkField($fieldSelector);
                     } else {
-                        $this->uncheckField($fieldSelector);
+                        $page->uncheckField($fieldSelector);
                     }
+//                } elseif ($type == 'radio') {
+//                    // TODO: handle radio
                 } else {
-                    $this->fillField($fieldSelector, $value);
+                    $page->fillField($fieldSelector, $value);
                 }
             } elseif ($tag == 'label') {
                 foreach (explode(',', $value) as $option) {

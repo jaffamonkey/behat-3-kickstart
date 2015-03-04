@@ -23,7 +23,7 @@ Feature: The Gherkin
 
   @phantomjs
   Scenario: The Gherkin Form Filling Eg2
-    Given I am on "/form-test/"
+    Given I am on "/form-test"
     When I fill form with:
       | title      | some text |
       | checkbox1 | YES       |
