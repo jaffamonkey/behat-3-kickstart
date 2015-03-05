@@ -1,15 +1,17 @@
 <?php
 
 use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\MinkExtension\Context\RawMinkContext;
+use Behat\MinkExtension\Context\MinkContext;
 use Behat\Behat\Context\Context;
 use Behat\WebApiExtension;
 
 
+define('BEHAT_ERROR_REPORTING', E_ERROR | E_WARNING | E_PARSE);
+
 /**
  * Features context.
  */
-class FeatureContext extends RawMinkContext implements Context, SnippetAcceptingContext
+class FeatureContext extends MinkContext implements Context, SnippetAcceptingContext
 {
 
     /**

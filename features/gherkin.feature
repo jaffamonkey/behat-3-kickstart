@@ -8,6 +8,14 @@ Feature: The Gherkin
     Then I should see "Behat"
     And count of "20" instances of "Behat" exists on page
 
+  @phantomjs
+  Scenario: Login/Logout
+    Given I am on "/wp-admin"
+    And I am logged in as "test" with password "test"
+    Then I should see "Howdy"
+    When I follow "Log Out"
+    Then I should see "You are now logged out"
+
   @api
   Scenario: The Gherkin API test
     Given I send a GET request to "http://jaffamonkey.com/wp-json/posts/11123"

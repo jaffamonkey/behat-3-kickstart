@@ -3,17 +3,11 @@
 namespace Page;
 
 use SensioLabs\Behat\PageObjectExtension\PageObject\Page;
+use Behat\Mink;
 
 class Homepage extends Page
 {
-    /**
-     * Initializes context.
-     * Every scenario gets it's own context object.
-     */
-    public function __construct()
-    {
 
-    }
     /**
      * @param string $email
      * @param string $password
@@ -21,10 +15,8 @@ class Homepage extends Page
      */
     public function loginCredentials($email, $password)
     {
-        $this->open('/');
-        $this->clickLink('Login');
-        $this->fillField('username', $email);
-        $this->fillField('password', $password);
-        $this->pressButton('_submit');
+        $this->fillField('user_login', $email);
+        $this->fillField('user_pass', $password);
+        $this->pressButton('wp-submit');
     }
 }

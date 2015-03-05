@@ -7,14 +7,6 @@ use Behat\Gherkin\Node\TableNode;
 
 class Profileform extends Page
 {
-    /**
-     * Initializes context.
-     * Every scenario gets it's own context object.
-     */
-
-    public function __construct()
-    {
-    }
 
     /**
      * @param TableNode $table
@@ -24,24 +16,20 @@ class Profileform extends Page
     public function fillForm(TableNode $table)
     {
         $page = $this;
-
         foreach ($table->getRows() as $row) {
             list($fieldSelector, $value) = $row;
-
+            echo 'this is a value of some kind:' . $fieldSelector;
             $field = $page->findField($fieldSelector);
             if (empty($field)) {
-                $field = $this->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $fieldSelector . '")]');
+                $field = $this->getSession()->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $fieldSelector . '")]');
                 if (!empty($field)) {
                     $field = current($field);
                 }
             }
-
             if (empty($field)) {
-                die('Field not found ' . $fieldSelector. PHP_EOL);
+                throw new \Exception('Field not found: ' . $fieldSelector);
             }
-
             $tag = strtolower($field->getTagName());
-
             if ($tag == 'textarea') {
                 $page->fillField($fieldSelector, $value);
             } elseif ($tag == 'select') {
@@ -54,14 +42,12 @@ class Profileform extends Page
                 }
             } elseif ($tag == 'input') {
                 $type = strtolower($field->getAttribute('type'));
-                if ($type == 'checkbox' || $type == 'radio') {
+                if ($type == 'checkbox') {
                     if (strtolower($value) == 'yes') {
                         $page->checkField($fieldSelector);
                     } else {
                         $page->uncheckField($fieldSelector);
                     }
-//                } elseif ($type == 'radio') {
-//                    // TODO: handle radio
                 } else {
                     $page->fillField($fieldSelector, $value);
                 }
@@ -74,7 +60,6 @@ class Profileform extends Page
         }
     }
 
-
     /**
      * @param TableNode $table
      * @return Page
@@ -85,7 +70,7 @@ class Profileform extends Page
         foreach ($table->getRows() as $row) {
             list($field, $value) = $row;
 
-            $node = $this->getSession()->getPage()->findField($field);
+            $node = $this->findField($field);
             if (empty($node)) {
                 $node = $this->getSession()->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $field . '")]');
                 if (!empty($node)) {
@@ -106,7 +91,7 @@ class Profileform extends Page
                 }
 
                 $options = array();
-                $optionNodes = $this->getSession()->getDriver()->find($node->getXpath() . "/option");
+                $optionNodes = $this->getDriver()->find($node->getXpath() . "/option");
                 foreach ($optionNodes as $optionNode) {
                     $options[$optionNode->getValue()] = $optionNode->getText();
                     $options[$optionNode->getText()] = $optionNode->getText();

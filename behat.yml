@@ -4,7 +4,6 @@ default:
       path: %paths.base%/features
       contexts:
         - Behat\WebApiExtension\Context\WebApiContext
-        - Behat\MinkExtension\Context\MinkContext
         - FeatureContext
         - HomepageContext
         - ProfileformContext

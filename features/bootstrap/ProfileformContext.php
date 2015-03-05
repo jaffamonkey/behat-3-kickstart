@@ -2,17 +2,11 @@
 
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
 use Behat\Gherkin\Node\TableNode;
-use Page\Profileform;
 
 class ProfileformContext extends PageObjectContext
-
 {
-
-    private $profileform;
-
-    public function __construct(Profileform $profileform)
+    public function __construct()
     {
-        $this->profileform = $profileform;
     }
 
     /**
@@ -21,7 +15,8 @@ class ProfileformContext extends PageObjectContext
      */
     public function iFillFormWith(TableNode $table)
     {
-        $this->profileform->fillForm($table);
+
+        $this->getPage('Profileform')->fillForm($table);
     }
 
     /**
@@ -30,7 +25,7 @@ class ProfileformContext extends PageObjectContext
      */
     public function iShouldSeeFormWith(TableNode $table)
     {
-        $this->profileform->assertFormContain($table);
+        $this->getPage('Profileform')->assertFormContain($table);
     }
 
 }

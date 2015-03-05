@@ -1,16 +1,13 @@
 <?php
 
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
-use Page\Homepage;
+use Behat\Mink;
 
 class HomepageContext extends PageObjectContext
 {
 
-    private $homepage;
-
-    public function __construct(Homepage $homepage)
+    public function __construct()
     {
-        $this->homepage = $homepage;
     }
     
     /**
@@ -18,6 +15,6 @@ class HomepageContext extends PageObjectContext
      */
     public function iAmLoggedInAsWithPassword($email, $password)
     {
-        $this->homepage->loginCredentials($email, $password);
+        $this->getPage('Homepage')->loginCredentials($email, $password);
     }
 }
