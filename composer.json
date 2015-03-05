@@ -1,7 +1,6 @@
 {
 "name": "behat mink skeleton",
 "require": {
-
   "behat/behat":  "3.0.*",
   "behat/mink-extension": "~2.0@dev",
   "behat/mink-browserkit-driver": "~1.1@dev",
