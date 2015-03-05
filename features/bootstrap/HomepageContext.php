@@ -1,7 +1,6 @@
 <?php
 
 use SensioLabs\Behat\PageObjectExtension\Context\PageObjectContext;
-use Behat\Mink;
 
 class HomepageContext extends PageObjectContext
 {

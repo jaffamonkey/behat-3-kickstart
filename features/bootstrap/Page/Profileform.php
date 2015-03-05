@@ -21,7 +21,7 @@ class Profileform extends Page
             echo 'this is a value of some kind:' . $fieldSelector;
             $field = $page->findField($fieldSelector);
             if (empty($field)) {
-                $field = $this->getSession()->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $fieldSelector . '")]');
+                $field = $this->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $fieldSelector . '")]');
                 if (!empty($field)) {
                     $field = current($field);
                 }
