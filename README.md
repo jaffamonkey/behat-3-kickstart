@@ -1,3 +1,10 @@
+Key components:
+==============
+Behat 3
+Mink Extension
+PageObjects
+WebAPIContext
+
 ==============
 RUNNING BEHAT TESTS
 
