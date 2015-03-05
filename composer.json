@@ -3,7 +3,6 @@
 "require": {
 
   "behat/behat":  "3.0.*",
-  "behat/mink":
   "behat/mink-extension": "~2.0@dev",
   "behat/mink-browserkit-driver": "~1.1@dev",
   "behat/mink-goutte-driver": "*@dev",
@@ -13,7 +12,8 @@
   "phpunit/phpunit": "4.*@stable",
   "behat/web-api-extension": "~1.0@dev",
   "behat/mink-zombie-driver": "~1.2",
-  "sensiolabs/behat-page-object-extension": "~2.0"
+  "sensiolabs/behat-page-object-extension": "~2.0",
+  "edmondscommerce/faker-context": "*@dev"
 },
 "minimum-stability": "dev",
 "config": {

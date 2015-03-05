@@ -118,7 +118,7 @@ class Profileform extends Page
 
             if (!preg_match($regex, $actual)) {
                 $message = sprintf('The field "%s" value is "%s", but "%s" expected.', $field, $actual, $value);
-                throw new \Exception($message, $this->getSession());
+                throw new \Exception($message);
             }
         }
     }

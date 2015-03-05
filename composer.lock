@@ -430,16 +430,17 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/minkphp/MinkZombieDriver.git",
-                "reference": "32a4b84cf470074dd86847579e8987828ab60aa6"
+                "reference": "c9cbb3a829fd84dd9a48cb4849ed6cc3a938c58a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/minkphp/MinkZombieDriver/zipball/32a4b84cf470074dd86847579e8987828ab60aa6",
-                "reference": "32a4b84cf470074dd86847579e8987828ab60aa6",
+                "url": "https://api.github.com/repos/minkphp/MinkZombieDriver/zipball/c9cbb3a829fd84dd9a48cb4849ed6cc3a938c58a",
+                "reference": "c9cbb3a829fd84dd9a48cb4849ed6cc3a938c58a",
                 "shasum": ""
             },
             "require": {
                 "behat/mink": "~1.7@dev",
+                "ext-sockets": "*",
                 "php": ">=5.3.1",
                 "symfony/process": "~2.1"
             },
@@ -480,7 +481,7 @@
                 "testing",
                 "zombie"
             ],
-            "time": "2015-02-05 21:51:38"
+            "time": "2015-03-05 09:00:45"
         },
         {
             "name": "behat/transliterator",
