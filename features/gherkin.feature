@@ -38,11 +38,11 @@ Feature: The Gherkin
       | checkbox2 | YES       |
       | checkbox3 | YES       |
       | select    | Option 3  |
-    And I press "Save"
-    Then I move backward one page
     Then I should see form with:
       | title     | some text |
       | checkbox1 | YES       |
       | checkbox2 | YES       |
       | checkbox3 | YES       |
       | select    | Option 3  |
+    And I press "Save"
+    And I should see "Error"

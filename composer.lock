@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f3d01f93f3b4d0ae1e08f4bbc821d5c1",
+    "hash": "a3776ed5c21913aa7065d76fa58a8026",
     "packages": [
         {
             "name": "behat/behat",
@@ -677,6 +677,50 @@
             "time": "2015-01-16 19:29:51"
         },
         {
+            "name": "edmondscommerce/faker-context",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/edmondscommerce/faker-context.git",
+                "reference": "0e54345b97a72990cb606bf1dbfd5e120d127eab"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/edmondscommerce/faker-context/zipball/0e54345b97a72990cb606bf1dbfd5e120d127eab",
+                "reference": "0e54345b97a72990cb606bf1dbfd5e120d127eab",
+                "shasum": ""
+            },
+            "require": {
+                "fzaninotto/faker": "1.5.*@dev"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "EdmondsCommerce\\FakerContext\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "edmondscommerce",
+                    "email": "info@edmondscommerce.co.uk"
+                }
+            ],
+            "description": "A Behat Context that allows you to use Faker",
+            "homepage": "https://www.edmondscommerce.co.uk",
+            "keywords": [
+                "Behat",
+                "Browser Testing",
+                "data",
+                "faker",
+                "testing"
+            ],
+            "time": "2015-02-17 14:12:47"
+        },
+        {
             "name": "fabpot/goutte",
             "version": "dev-master",
             "source": {
@@ -724,6 +768,58 @@
                 "scraper"
             ],
             "time": "2015-03-02 14:15:10"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "40426f77f030b6fb45951be920ff1036b2f423d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/40426f77f030b6fb45951be920ff1036b2f423d2",
+                "reference": "40426f77f030b6fb45951be920ff1036b2f423d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "ext-intl": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "time": "2015-02-27 08:30:07"
         },
         {
             "name": "guzzlehttp/guzzle",
@@ -2537,7 +2633,8 @@
         "behat/mink-goutte-driver": 20,
         "chartinger/behat-twig-report-extension": 20,
         "phpunit/phpunit": 0,
-        "behat/web-api-extension": 20
+        "behat/web-api-extension": 20,
+        "edmondscommerce/faker-context": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
