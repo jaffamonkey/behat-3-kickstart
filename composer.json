@@ -12,7 +12,7 @@
   "behat/web-api-extension": "~1.0@dev",
   "behat/mink-zombie-driver": "~1.2",
   "sensiolabs/behat-page-object-extension": "~2.0",
-  "edmondscommerce/faker-context": "*@dev"
+  "bossa/phpspec2-expect": "~1.0"
 },
 "minimum-stability": "dev",
 "config": {
