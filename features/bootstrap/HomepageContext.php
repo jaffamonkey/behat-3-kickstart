@@ -8,7 +8,7 @@ class HomepageContext extends PageObjectContext
     public function __construct()
     {
     }
-    
+
     /**
      * @Given I am logged in as :arg1 with password :arg2
      */

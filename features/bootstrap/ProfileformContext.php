@@ -16,7 +16,7 @@ class ProfileformContext extends PageObjectContext
     public function iFillFormWith(TableNode $table)
     {
 
-        $this->getPage('Profileform')->fillForm($table);
+        $this->getPage('Profileform')->fillOutForm($table);
     }
 
     /**
@@ -25,7 +25,7 @@ class ProfileformContext extends PageObjectContext
      */
     public function iShouldSeeFormWith(TableNode $table)
     {
-        $this->getPage('Profileform')->assertFormContain($table);
+        $this->getPage('Profileform')->checkFormContains($table);
     }
 
 }

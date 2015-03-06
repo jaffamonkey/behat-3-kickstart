@@ -6,7 +6,7 @@ Feature: The Gherkin
     And I fill in "Behat" for "s"
     And I press "Search"
     Then I should see "Behat"
-    And count of "20" instances of "Behat" exists on page
+    And count of "22" instances of "Behat" exists on page
 
   @phantomjs
   Scenario: Login/Logout
@@ -33,7 +33,7 @@ Feature: The Gherkin
   Scenario: The Gherkin Form Filling Eg2
     Given I am on "/form-test"
     When I fill form with:
-      | title      | some text |
+      | title     | some text |
       | checkbox1 | YES       |
       | checkbox2 | YES       |
       | checkbox3 | YES       |
