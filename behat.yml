@@ -8,7 +8,6 @@ default:
         - WebFeatureContext
         - HomepageContext
         - ProfileformContext
-        - ElementcountContext
   extensions:
         Behat\WebApiExtension:
           base_url: 'http://jaffamonkey.com'

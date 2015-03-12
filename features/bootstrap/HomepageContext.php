@@ -17,4 +17,11 @@ class HomepageContext extends PageObjectContext
         $this->getPage('Homepage')->loginCredentials($email, $password);
     }
 
+    /**
+     * @Then /^count of "([^"]*)" instances of "(?P<text>[^"]*)" exists on page$/
+     */
+    public function countOfExistsOnPage($count, $area)
+    {
+        $this->getPage('Homepage')->countOfElements($count, $area);
+    }
 }
