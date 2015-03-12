@@ -16,11 +16,11 @@ default:
          namespaces:
            page: [Page]
            element: [Page\Element]
-#        chartinger\Behat\TwigReportExtension\Extension:
-#          output:
-#            file: ./report.html
-#          templates:
-#            file: default.twig
+        chartinger\Behat\TwigReportExtension\Extension:
+          output:
+            file: ./report.html
+          templates:
+            file: default.twig
         Behat\MinkExtension:
             base_url: 'http://jaffamonkey.com'
             files_path: 'vendor'
