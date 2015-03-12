@@ -16,4 +16,5 @@ class HomepageContext extends PageObjectContext
     {
         $this->getPage('Homepage')->loginCredentials($email, $password);
     }
+
 }

@@ -6,7 +6,7 @@ Feature: The Gherkin
     And I fill in "Behat" for "s"
     And I press "Search"
     Then I should see "Behat"
-    And count of "22" instances of "Behat" exists on page
+    And count of "21" instances of "Behat" exists on page
 
   @phantomjs
   Scenario: Login/Logout
@@ -18,7 +18,7 @@ Feature: The Gherkin
 
   @api
   Scenario: The Gherkin API test
-    Given I send a GET request to "http://jaffamonkey.com/wp-json/posts/11123"
+    Given I send a GET request to "/wp-json/posts/11123"
     Then the response status code should be 200
     And response should contain "publish"
 
@@ -45,4 +45,4 @@ Feature: The Gherkin
       | checkbox3 | YES       |
       | select    | Option 3  |
     And I press "Save"
-    And I should see "Error"
+    And I should see "Oops! That page can’t be found"
