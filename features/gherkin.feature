@@ -6,15 +6,7 @@ Feature: The Gherkin
     And I fill in "Behat" for "s"
     And I press "Search"
     Then I should see "Behat"
-    And count of "21" instances of "Behat" exists on page
-
-  @phantomjs
-  Scenario: Login/Logout
-    Given I am on "/wp-admin"
-    And I am logged in as "test" with password "test"
-    Then I should see "Howdy"
-    When I follow "Log Out"
-    Then I should see "You are now logged out"
+    And count of "25" instances of "Behat" exists on page
 
   @api
   Scenario: The Gherkin API test

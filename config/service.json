@@ -1,0 +1,20 @@
+{
+    "name": "Travis API",
+    "operations": {
+        "GetReposBuilds": {
+            "httpMethod": "GET",
+            "uri": "repos/{slug}/builds",
+            "summary": "Gets the last build for repo",
+            "parameters": {
+                "slug": {
+                    "location": "uri",
+                    "description": "Repo slug from GitHub",
+                    "required": true
+                },
+                "number": {
+                    "location": "query"
+                }
+            }
+        }
+    }
+}

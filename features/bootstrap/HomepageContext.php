@@ -22,6 +22,6 @@ class HomepageContext extends PageObjectContext
      */
     public function countOfExistsOnPage($count, $area)
     {
-        $this->getPage('Homepage')->countOfElements($count, $area);
+        $this->getPage('Homepage')->countTheElements($count, $area);
     }
 }

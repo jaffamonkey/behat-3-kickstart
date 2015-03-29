@@ -137,7 +137,7 @@ class Formfilling extends Element
      *
      * @return string
      */
-    protected function fixStepArgument2($argument)
+    protected function fixStepArgument($argument)
     {
         return str_replace('\\"', '"', $argument);
     }

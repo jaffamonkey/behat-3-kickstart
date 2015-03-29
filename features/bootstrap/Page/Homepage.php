@@ -20,19 +20,19 @@ class Homepage extends Page
         $this->pressButton('wp-submit');
     }
 
+
     /**
      * @param string $count
      * @param string $area
      * @return Page
      * @throws \Exception
      */
-    public function countOfElements($count, $area)
+    public function countTheElements($count, $area)
     {
-        $str = $this->getContent();
+        $str = $this->getDriver()->getContent();
         $count2 = substr_count($str, $area);
-        echo $count2;
         if ($count != $count2) {
-            throw new \Exception('Count is incorrect');
+            throw new \Exception($count . ' is incorrect, it should be: ' . $count2);
         };
     }
 

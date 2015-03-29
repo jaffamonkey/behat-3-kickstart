@@ -8,6 +8,7 @@ default:
         - WebFeatureContext
         - HomepageContext
         - ProfileformContext
+        - Behat\GuzzleExtension\Context\GuzzleContext
   extensions:
         Behat\WebApiExtension:
           base_url: 'http://jaffamonkey.com'
@@ -27,3 +28,6 @@ default:
             selenium2:
               wd_host: http://127.0.0.1:4444/wd/hub
               capabilities: { "browser": "firefox", "version": "36"}
+        Behat\GuzzleExtension:
+              base_url: http://jaffamonkey.com
+              service_descriptions: %paths.base%/config/service.json
