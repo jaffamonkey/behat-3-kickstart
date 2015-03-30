@@ -1,20 +1,9 @@
 {
-    "name": "Travis API",
-    "operations": {
-        "GetReposBuilds": {
-            "httpMethod": "GET",
-            "uri": "repos/{slug}/builds",
-            "summary": "Gets the last build for repo",
-            "parameters": {
-                "slug": {
-                    "location": "uri",
-                    "description": "Repo slug from GitHub",
-                    "required": true
-                },
-                "number": {
-                    "location": "query"
-                }
-            }
-        }
+  "name": "jaffamonkeyAPI",
+  "operations": {
+    "JaffamonkeySite": {
+      "httpMethod": "GET",
+      "uri": "wp-json/posts/11123"
     }
+  }
 }

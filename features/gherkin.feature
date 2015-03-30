@@ -10,9 +10,17 @@ Feature: The Gherkin
 
   @api
   Scenario: The Gherkin API test
-    Given I send a GET request to "/wp-json/posts/11123"
+    Given I send a GET request to "http://jaffamonkey.com/wp-json/posts/11123"
     Then the response status code should be 200
     And response should contain "publish"
+
+  @api
+  Scenario: The Gherkin API test 2
+    When I called "JaffamonkeySite"
+    And I get a successful response
+    Then the response contains the following values:
+      | title  | Some basic CLI web performance tools |
+      | status | publish                              |
 
   @phantomjs
   Scenario: The Gherkin Browser UI

@@ -25,7 +25,7 @@ class Formfilling extends Element
         $page = $this;
         foreach ($table->getRows() as $row) {
             list($fieldSelector, $value) = $row;
-            echo 'this is a value of some kind:' . $fieldSelector;
+//            echo 'this is a value of some kind:' . $fieldSelector;
             $field = $page->findField($fieldSelector);
             if (empty($field)) {
                 $field = $this->getDriver()->find('//label[contains(normalize-space(string(.)), "' . $fieldSelector . '")]');
