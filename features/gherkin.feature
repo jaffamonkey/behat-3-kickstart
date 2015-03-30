@@ -1,6 +1,6 @@
 Feature: The Gherkin
 
-  @phantomjs @api
+  @phantomjs @goutte
   Scenario: The Gherkin Headless UI
     Given I am on "/"
     And I fill in "Behat" for "s"
@@ -8,28 +8,22 @@ Feature: The Gherkin
     Then I should see "Behat"
     And count of "25" instances of "Behat" exists on page
 
-  @api
-  Scenario: The Gherkin API test
-    Given I send a GET request to "http://jaffamonkey.com/wp-json/posts/11123"
-    Then the response status code should be 200
-    And response should contain "publish"
-
-  @api
-  Scenario: The Gherkin API test 2
+  @api @guzzle
+  Scenario: The Gherkin API
     When I called "JaffamonkeySite"
     And I get a successful response
     Then the response contains the following values:
       | title  | Some basic CLI web performance tools |
       | status | publish                              |
 
-  @phantomjs
+  @phantomjs @goutte
   Scenario: The Gherkin Browser UI
     Given I am on "/"
     And I fill in "Behat" for "s"
     And I press "Search"
     Then I should see "Behat"
 
-  @phantomjs
+  @phantomjs @goutte
   Scenario: The Gherkin Form Filling Eg2
     Given I am on "/form-test"
     When I fill form with:
