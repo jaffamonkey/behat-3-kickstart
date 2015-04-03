@@ -16,7 +16,7 @@ Feature: The Gherkin
       | title  | Some basic CLI web performance tools |
       | status | publish                              |
 
-  @phantomjs @goutte
+  @phantomjs @goutte @javascript
   Scenario: The Gherkin Browser UI
     Given I am on "/"
     And I fill in "Behat" for "s"

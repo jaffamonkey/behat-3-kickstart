@@ -24,10 +24,7 @@ default:
         Behat\MinkExtension:
             base_url: 'http://jaffamonkey.com'
             files_path: 'vendor'
-            goutte: ~
-            selenium2:
-              wd_host: http://127.0.0.1:4444/wd/hub
-              capabilities: { "browser": "firefox", "version": "36"}
+            selenium2: ~
         Behat\GuzzleExtension:
               base_url: http://jaffamonkey.com
               service_descriptions: %paths.base%/config/service.json
@@ -39,4 +36,4 @@ saucelabs_ie8:
             selenium2:
               browser: internet explorer
               wd_host: saucelabs_username:your_api_key@ondemand.saucelabs.com:80/wd/hub
-              capabilities: {  "platform": "Windows 2012", "version": "8", "name": "orange brand"}
+              capabilities: {  "platform": "Windows 2012", "version": "8", "name": "ie8"}
