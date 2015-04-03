@@ -43,4 +43,4 @@ Using saucelabs service, you can run tests against most OS/browser combinations 
 
 I added an example profile for IE8, as example.  To run it:-
 
-* bin/behat -p saucelabs features/
+* bin/behat -p saucelabs_ie8 features/
