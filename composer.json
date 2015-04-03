@@ -12,7 +12,9 @@
   "behat/mink-zombie-driver": "~1.2",
   "sensiolabs/behat-page-object-extension": "~2.0",
   "bossa/phpspec2-expect": "~1.0",
-  "teaandcode/behat-guzzle-extension": "1.0.*@dev"
+  "teaandcode/behat-guzzle-extension": "1.0.*@dev",
+  "sauce/sausage": ">=0.5",
+  "sauce/connect": ">=3.0"
 },
 "minimum-stability": "dev",
 "config": {

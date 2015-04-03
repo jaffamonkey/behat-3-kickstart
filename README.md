@@ -34,3 +34,13 @@ Run Tests In Parallel (from Behat root folder)
 * apt-get install parallel
 * java -jar selenium-server-standalone-2.43.1.jar --role hub
 * find features -iname '*.feature'|  parallel --gnu -j5 --group bin/behat --ansi {}
+
+
+CROSS BROWSER
+-------------
+
+Using saucelabs service, you can run tests against most OS/browser combinations and mobile platforms too.
+
+I added an example profile for IE8, as example.  To run it:-
+
+* bin/behat -p saucelabs features/

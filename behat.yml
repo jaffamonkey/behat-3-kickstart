@@ -31,3 +31,12 @@ default:
         Behat\GuzzleExtension:
               base_url: http://jaffamonkey.com
               service_descriptions: %paths.base%/config/service.json
+saucelabs_ie8:
+  extensions:
+        Behat\MinkExtension:
+            base_url:  'http://jaffamonkey.com'
+            default_session:  'selenium2'
+            selenium2:
+              browser: internet explorer
+              wd_host: saucelabs_username:your_api_key@ondemand.saucelabs.com:80/wd/hub
+              capabilities: {  "platform": "Windows 2012", "version": "8", "name": "orange brand"}
