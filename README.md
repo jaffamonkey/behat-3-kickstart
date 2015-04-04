@@ -5,13 +5,18 @@ Mink Extension
 PageObjects
 WebAPIContext
 
+
+SETUP
 ==============
-RUNNING BEHAT TESTS
 
 From Behat repo root run:-
 * php composer.phar install
 * npm install -g phantomjs (or brew install phantomjs)
 * wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
+
+
+RUNNING SELENIUM BROWSER TESTS
+==============================
 
 Before running behat to test the feature files in features directory, ensure the following commands are executed :-
 * java -jar selenium-server-standalone-[version].jar
@@ -19,11 +24,13 @@ Before running behat to test the feature files in features directory, ensure the
 To run tests (open another terminal window):-
 * bin/behat features
 
-First scenario will run in Goutte, second using Guzzle (for API), the rest using Firefox
+Second test runs using Guzzle (for API), the rest using Firefox
 
-If you run tests like this, it will run the first, second and last test in phantomJS:-
+RUNNING PHANTOMJS TESTS
+==============================
+
 * phantomjs --webdriver=4444
-* bin/behat -p phantomjs --tags '@phantomjs' features
+* bin/behat -p phantomjs features
 
 
 PERFORMANCE TEST
