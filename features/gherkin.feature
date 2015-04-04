@@ -1,6 +1,6 @@
 Feature: The Gherkin
 
-  @phantomjs @goutte
+  @phantomjs @javascript
   Scenario: The Gherkin Headless UI
     Given I am on "/"
     And I fill in "Behat" for "s"
@@ -16,14 +16,14 @@ Feature: The Gherkin
       | title  | Some basic CLI web performance tools |
       | status | publish                              |
 
-  @phantomjs @goutte @javascript
+  @phantomjs @javascript
   Scenario: The Gherkin Browser UI
     Given I am on "/"
     And I fill in "Behat" for "s"
     And I press "Search"
     Then I should see "Behat"
 
-  @phantomjs @goutte
+  @phantomjs @javascript
   Scenario: The Gherkin Form Filling Eg2
     Given I am on "/form-test"
     When I fill form with:
