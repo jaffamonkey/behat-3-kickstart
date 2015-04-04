@@ -10,7 +10,7 @@ RUNNING BEHAT TESTS
 
 From Behat repo root run:-
 * php composer.phar install
-* npm install -g phantomjs
+* npm install -g phantomjs (or brew install phantomjs)
 * wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
 
 Before running behat to test the feature files in features directory, ensure the following commands are executed :-
