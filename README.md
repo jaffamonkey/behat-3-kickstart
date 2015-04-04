@@ -5,7 +5,6 @@ Mink Extension
 PageObjects
 WebAPIContext
 
-
 SETUP
 ==============
 
@@ -13,7 +12,6 @@ From Behat repo root run:-
 * php composer.phar install
 * npm install -g phantomjs (or brew install phantomjs)
 * wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
-
 
 RUNNING SELENIUM BROWSER TESTS
 ==============================
@@ -27,17 +25,14 @@ To run tests (open another terminal window):-
 Second test runs using Guzzle (for API), the rest using Firefox
 
 RUNNING PHANTOMJS TESTS
-==============================
+=======================
 
 * phantomjs --webdriver=4444
 * bin/behat -p phantomjs features
 
 
-PERFORMANCE TEST
-----------------
-
-Run Tests In Parallel (from Behat root folder)
-----------------------------------------------
+PERFORMANCE/PARALLEL TESTING
+============================
 
 * apt-get install parallel
 * java -jar selenium-server-standalone-2.43.1.jar --role hub
@@ -45,7 +40,7 @@ Run Tests In Parallel (from Behat root folder)
 
 
 CROSS BROWSER
--------------
+============+
 
 Using saucelabs service, you can run tests against most OS/browser combinations and mobile platforms too.
 
