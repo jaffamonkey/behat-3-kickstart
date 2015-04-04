@@ -28,6 +28,17 @@ default:
         Behat\GuzzleExtension:
               base_url: http://jaffamonkey.com
               service_descriptions: %paths.base%/config/service.json
+phantomjs:
+  extensions:
+        Behat\MinkExtension:
+            base_url:  'http://jaffamonkey.com'
+            default_session:  'selenium2'
+            browser_name: phantomjs
+            selenium2:
+              wd_host: localhost:4444/wd/hub
+              capabilities:
+                version: ''
+                browser: phantomjs
 saucelabs_ie8:
   extensions:
         Behat\MinkExtension:

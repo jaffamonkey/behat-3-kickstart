@@ -21,7 +21,8 @@ To run tests (open another terminal window):-
 
 First scenario will run in Goutte, second using Guzzle (for API), the rest using Firefox
 
-If you run tests like this, it will run the first and last test (both tagged "@phantomjs") in phantomJS:-
+If you run tests like this, it will run the first, second and last test in phantomJS:-
+* phantomjs --webdriver=4444
 * bin/behat -p phantomjs --tags '@phantomjs' features
 
 
