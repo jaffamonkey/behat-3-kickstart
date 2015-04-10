@@ -40,10 +40,17 @@ PERFORMANCE/PARALLEL TESTING
 
 
 CROSS BROWSER
-============+
+============
 
 Using saucelabs service, you can run tests against most OS/browser combinations and mobile platforms too.
 
 I added an example profile for IE8, as example.  To run it:-
 
 * bin/behat -p saucelabs_ie8 features/
+
+If you want to use saucelabs service against a localhost url, then follow these steps (assuming linux):
+
+1. sudo wget https://saucelabs.com/downloads/sc-4.3.8-linux.tar.gz
+2. sudo tar -xvf sc-4.3.8-linux.tar.gz
+3. cd sc-4.3.8-linux
+4. bin/sc -u saucelabs_user_id -k saucelabs_api_key
