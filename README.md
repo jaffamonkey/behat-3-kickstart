@@ -44,7 +44,11 @@ CROSS BROWSER
 
 Using saucelabs service, you can run tests against most OS/browser combinations and mobile platforms too.
 
-I added an example profile for IE8, as example.  To run it:-
+I added an example profile for IE8, as example.  To run it, first run sauceconnect config:-
+
+* bin/sauce_config saucelabs_user_id saucelabs_api_key
+
+Now try running the tests ....
 
 * bin/behat -p saucelabs_ie8 features/
 
