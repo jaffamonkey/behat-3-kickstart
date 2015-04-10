@@ -52,7 +52,7 @@ Now try running the tests ....
 
 * bin/behat -p saucelabs_ie8 features/
 
-If you want to use saucelabs service against a localhost url, then follow these steps (assuming linux):
+If you want to use saucelabs service against a localhost url, or any url behind a firewall, then follow these steps (assuming linux):
 
 1. sudo wget https://saucelabs.com/downloads/sc-4.3.8-linux.tar.gz
 2. sudo tar -xvf sc-4.3.8-linux.tar.gz
