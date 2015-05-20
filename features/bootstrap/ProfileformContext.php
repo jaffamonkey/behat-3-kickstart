@@ -27,5 +27,4 @@ class ProfileformContext extends PageObjectContext
     {
         $this->getPage('Profileform')->checkFormContains($table);
     }
-
 }

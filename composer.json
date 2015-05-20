@@ -6,15 +6,14 @@
   "behat/mink-browserkit-driver": "~1.1@dev",
   "behat/mink-goutte-driver": "*@dev",
   "behat/mink-selenium2-driver": "1.*",
-  "guzzlehttp/guzzle": "4.*",
   "chartinger/behat-twig-report-extension": "*@dev",
   "behat/web-api-extension": "~1.0@dev",
-  "behat/mink-zombie-driver": "~1.2",
   "sensiolabs/behat-page-object-extension": "~2.0",
   "bossa/phpspec2-expect": "~1.0",
   "teaandcode/behat-guzzle-extension": "1.0.*@dev",
   "sauce/sausage": ">=0.5",
-  "sauce/connect": ">=3.0"
+  "sauce/connect": ">=3.0",
+  "emuse/behat-html-formatter": "dev-master"
 },
 "minimum-stability": "dev",
 "config": {

@@ -24,4 +24,13 @@ class HomepageContext extends PageObjectContext
     {
         $this->getPage('Homepage')->countTheElements($count, $area);
     }
+
+    /**
+     * @Given /^the current post display date is today plus "([^"]*)" working days$/
+     */
+    public function taskDueDateIsRegDueDatePlusDays($workingDays)
+    {
+        $this->getPage('Homepage')->theCurrentPostDateTodayPlusWorkingDays($workingDays);
+    }
+
 }

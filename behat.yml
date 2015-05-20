@@ -4,21 +4,21 @@ default:
       path: %paths.base%/features
       contexts:
         - Behat\WebApiExtension\Context\WebApiContext
+        - Behat\GuzzleExtension\Context\GuzzleContext
         - Behat\MinkExtension\Context\MinkContext
         - WebFeatureContext
         - HomepageContext
         - ProfileformContext
-        - Behat\GuzzleExtension\Context\GuzzleContext
   extensions:
         Behat\WebApiExtension:
-          base_url: 'http://jaffamonkey.com'
+            base_url: 'http://jaffamonkey.com'
         SensioLabs\Behat\PageObjectExtension:
          namespaces:
-           page: [Page]
-           element: [Page\Element]
+            page: [Page]
+            element: [Page\Element]
         chartinger\Behat\TwigReportExtension\Extension:
           output:
-            file: ./report.html
+            file: %paths.base%/reports/htmlreport.html
           templates:
             file: default.twig
         Behat\MinkExtension:
@@ -26,8 +26,15 @@ default:
             files_path: 'vendor'
             selenium2: ~
         Behat\GuzzleExtension:
-              base_url: http://jaffamonkey.com
-              service_descriptions: %paths.base%/config/service.json
+            base_url: http://jaffamonkey.com
+            service_descriptions: %paths.base%/config/service.json
+        emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
+            name: html
+            renderer: Twig
+            file_name: twigreport
+  formatters:
+      html:
+          output_path: %paths.base%/reports
 phantomjs:
   extensions:
         Behat\MinkExtension:

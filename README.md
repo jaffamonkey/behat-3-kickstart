@@ -58,3 +58,13 @@ If you want to use saucelabs service against a localhost url, or any url behind 
 2. sudo tar -xvf sc-4.3.8-linux.tar.gz
 3. cd sc-4.3.8-linux
 4. bin/sc -u saucelabs_user_id -k saucelabs_api_key
+
+
+REPORTING
+============
+
+As well as a html style report, there is a graphical report-based version using Twig.  These are generated in the "reports" folder.  Below is example of the Twig report output.
+
+<img src="http://jaffamonkey.com/wp-content/uploads/2015/05/Screen-Shot-2015-05-20-at-02.59.44.png" style="max-width:100%;">
+
+
