@@ -1,4 +1,4 @@
-<img src="https://travis-ci.org/jaffamonkey/behat-3-kickstart.svg?branch=master" style="max-width:100%;">
+[![Build Status](https://travis-ci.org/jaffamonkey/behat-3-kickstart.svg?branch=master)](https://travis-ci.org/jaffamonkey/behat-3-kickstart)
 
 Key components:
 ==============
