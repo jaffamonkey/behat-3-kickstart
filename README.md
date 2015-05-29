@@ -1,3 +1,5 @@
+<img src="https://travis-ci.org/jaffamonkey/behat-3-kickstart.svg?branch=master" style="max-width:100%;">
+
 Key components:
 ==============
 Behat 3
@@ -65,6 +67,5 @@ REPORTING
 
 As well as a html style report, there is a graphical report-based version using Twig.  These are generated in the "reports" folder.  Below is example of the Twig report output.
 
-<img src="http://jaffamonkey.com/wp-content/uploads/2015/05/Screen-Shot-2015-05-20-at-02.59.44.png" style="max-width:100%;">
-
+<img src="http://jaffamonkey.com/wp-content/uploads/2015/05/Screen-Shot-2015-05-20-at-03.30.51.png" style="max-width:100%;">
 
