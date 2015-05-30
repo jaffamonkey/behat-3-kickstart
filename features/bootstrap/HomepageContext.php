@@ -41,4 +41,20 @@ class HomepageContext extends PageObjectContext
         $this->getPage('Homepage')->systemDateToTodayPlusWorkingDays($days);
     }
 
+    /**
+     * @Given I click the burger menu
+     */
+    public function iClickTheBurgerMenu()
+    {
+        $this->getPage('Homepage')->openTheBurgerMenu();
+    }
+
+    /**
+     * @Given I press Enter on keyboard
+     */
+    public function iPressEnterOnKeyboard()
+    {
+        $this->getPage('Homepage')->iPressEnter();
+    }
+
 }

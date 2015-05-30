@@ -6,16 +6,18 @@ Feature: UI testing
   @phantomjs @javascript
   Scenario: The Gherkin Headless UI
     Given I am on "/"
+    And I click the burger menu
     And I fill in "Behat" for "s"
-    And I press "Search"
+    And I am on "/?s=Behat"
     Then I should see "Behat"
-    And count of "24" instances of "Behat" exists on page
+    And count of "19" instances of "Behat" exists on page
 
   @phantomjs @javascript
   Scenario: The Gherkin Browser UI
     Given I am on "/"
+    And I click the burger menu
     And I fill in "Behat" for "s"
-    And I press "Search"
+    And I am on "/?s=Behat"
     Then I should see "Behat"
 
   @phantomjs @javascript
@@ -34,7 +36,8 @@ Feature: UI testing
       | checkbox3 | YES       |
       | select    | Option 3  |
     And I press "Save"
-    And I should see "Oops! That page can’t be found"
+    Then I should see "Your request was not found"
+    And I should see "Perhaps try a search?"
 
 
   @phantomjs @javascript
@@ -45,9 +48,10 @@ Feature: UI testing
 #    And I fill in "content" with "The post content"
 #    And I press "Publish"
     Given I am on the homepage
+    And I click the burger menu
     And I fill in "s" with "A blog post"
-    And I press "Search"
-    Then I should see "A blog post"
-    When I follow "A blog post"
-    Then the current post display date is today plus "0" working days
+    And I am on "/?s=Behat"
+    Then I should see "Behat 3 Skeleton Repo"
+#    When I follow "A blog post"
+#    Then the current post display date is today plus "0" working days
     
