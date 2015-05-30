@@ -42,6 +42,7 @@ phantomjs:
             default_session:  'selenium2'
             browser_name: phantomjs
             selenium2:
+              browser: phantomjs
               wd_host: localhost:4444/wd/hub
               capabilities:
                 version: ''
