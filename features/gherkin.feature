@@ -10,7 +10,7 @@ Feature: UI testing
     And I fill in "Behat" for "s"
     And I am on "/?s=Behat"
     Then I should see "Behat"
-    And count of "19" instances of "Behat" exists on page
+    And count of "21" instances of "Behat" exists on page
 
   @phantomjs @javascript
   Scenario: The Gherkin Browser UI
