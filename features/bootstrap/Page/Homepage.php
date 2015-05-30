@@ -164,13 +164,17 @@ if (exists) {
 
     }
 
+
     /**
-     * @Given /^I set system date to today plus "([^"]*)" working days$/
+     * Takes current date and adds number of working days
+     * @param $days
+     * @return Page
+     * @throws \Exception
      */
-    public function iSetSystemDateToTodayPlusDays($days)
+    public function systemDateToTodayPlusWorkingDays($days)
     {
         $t = date('Y-m-d');
-        $initialDate = DateTime::createFromFormat('Y-m-d', $t);
+        $initialDate = \DateTime::createFromFormat('Y-m-d', $t);
         $dayCounter = 0;
         $currentDay = $initialDate->getTimestamp();
         $currentYear = $initialDate->format('Y');

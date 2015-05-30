@@ -33,4 +33,12 @@ class HomepageContext extends PageObjectContext
         $this->getPage('Homepage')->theCurrentPostDateTodayPlusWorkingDays($workingDays);
     }
 
+    /**
+     * @Given /^I set system date to today plus "([^"]*)" working days$/
+     */
+    public function iSetSystemDateToTodayPlusWorkingDays($days)
+    {
+        $this->getPage('Homepage')->systemDateToTodayPlusWorkingDays($days);
+    }
+
 }
