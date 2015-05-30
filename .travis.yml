@@ -4,11 +4,13 @@ php:
 
 before_script:
   - composer install
-  - npm install -g phantomjs
-  - "phantomjs --webdriver=8324 > /dev/null &"
+  - apt-get install xvfb
+  - apt-get install firefox
+#  - npm install -g phantomjs
+#  - "phantomjs --webdriver=8324 > /dev/null &"
   - "wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar"
-  - "java -jar selenium-server-standalone-2.45.0.jar > /dev/null &"
+  - "DISPLAY=:10 xvfb-run java -jar selenium-server-standalone-2.45.0.jar > /dev/null &"
   - sleep 5
 
 script:
-  - php ./bin/behat -p phantomjs
+  - php ./bin/behat
