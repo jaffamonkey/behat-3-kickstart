@@ -15,4 +15,4 @@ before_script:
   - sleep 5
 
 script:
-  - bin/behat features
+  - php bin/behat features
