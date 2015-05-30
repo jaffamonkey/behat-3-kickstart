@@ -5,6 +5,7 @@ php:
 
 before_script:
   - composer install
+  - sudo apt-get update
   - sudo apt-get install xvfb
   - sudo apt-get install firefox
 #  - npm install -g phantomjs
