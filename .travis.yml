@@ -1,11 +1,12 @@
 language: php
+sudo: required
 php:
   - "5.5"
 
 before_script:
   - composer install
-  - yum info xorg-x11-server-Xvfb
-  - yum install firefox
+  - sudo apt-get install xvfb
+  - sudo apt-get install firefox
 #  - npm install -g phantomjs
 #  - "phantomjs --webdriver=8324 > /dev/null &"
   - "wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar"
