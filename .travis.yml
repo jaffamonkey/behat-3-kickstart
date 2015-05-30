@@ -4,8 +4,8 @@ php:
 
 before_script:
   - composer install
-  - apt-get install xvfb
-  - apt-get install firefox
+  - yum info xorg-x11-server-Xvfb
+  - yum install firefox
 #  - npm install -g phantomjs
 #  - "phantomjs --webdriver=8324 > /dev/null &"
   - "wget http://selenium-release.storage.googleapis.com/2.45/selenium-server-standalone-2.45.0.jar"
