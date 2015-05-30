@@ -42,16 +42,9 @@ Feature: UI testing
 
   @phantomjs @javascript
   Scenario: I can publish a new blog post
-#    Given I am logged in as "" with password ""
-#    When I am on "/wp-admin/post-new.php"
-#    And I fill in "post_title" with "A blog post"
-#    And I fill in "content" with "The post content"
-#    And I press "Publish"
     Given I am on the homepage
     And I click the burger menu
-    And I fill in "s" with "A blog post"
+    And I fill in "s" with "Behat"
     And I am on "/?s=Behat"
     Then I should see "Behat 3 Skeleton Repo"
-#    When I follow "A blog post"
-#    Then the current post display date is today plus "0" working days
     
