@@ -74,7 +74,6 @@ class Homepage extends Page
 
     /**
      * Javascript method that checks for A Tag element with a specific title tag
-     *
      * @param $value
      * @return string
      */
@@ -99,9 +98,11 @@ class Homepage extends Page
 
 
     /**
-     * @Given /^I fill random email for "([^"]*)"$/
+     * @param string $emailAddress
+     * @return Page
+     * @throws \Exception
      */
-    public function iFillRandomEmailFor($emailAddress)
+    public function randomEmailGenerator($emailAddress)
     {
         $characters = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomString = '';
@@ -109,15 +110,16 @@ class Homepage extends Page
             $randomString .= $characters[rand(0, strlen($characters) - 1)];
         }
         echo($randomString . '@test.com');
-        $this->getSession()->getPage()->fillField($emailAddress, $randomString . '@test.com');
+        $this->fillField($emailAddress, $randomString . '@test.com');
     }
 
     /**
-     * @Then /^I should see expected fields "([^"]*)"$/
+     * @param string $fields
+     * @return Page
+     * @throws \Exception
      */
-    public function iShouldSeeExpectedFields($fields)
+    public function checkFieldsExistOnPage($fields)
     {
-        $fields2 = 'Salutation,First name,Middle name,Surname,Company name (if relevant),Address 1,Address 2,Address 3,City/Town,County,Postcode,Date of birth,Daytime telephone number,Email address,DX Number,DX Exchange,Occupation,Place a cross (x) against one option that best describes your relationship to the donor,Date attorney signed LPA Part C:,Is attorney applying to register,Date attorney signed LPA002,Active';
         $params = explode(',', $fields);
         foreach ($params as $param) {
             $this->hasField($param);
@@ -125,19 +127,18 @@ class Homepage extends Page
 
     }
 
-
     /**
-     * @Then /^I select first autocomplete option for "([^"]*)"$/
+     * @param string $searchTerm
+     * @return Page
+     * @throws \Exception
      */
-    public function iSelectFirstAutcompleteOption($assigneeField, $searchTerm)
+    public function firstAutcompleteOptionSelect($searchTerm)
 
     {
         /**
          * The code below puts text in the input type, calls the jquery autocomplete feature
          * and then simulates clicking an item in the list that is returned.
          * To debug this javascript run a feature that runs this step and echo the $script variable below.
-         * Then in the actual application go to allocate on the Widget.
-         * On Assign to me: select user and then run the javascript in the console on firefox.
          */
         $this->fillField('searchBox', $searchTerm);
         $script = 'jQuery("#searchBox").autocomplete( "search", "' . $searchTerm . '");

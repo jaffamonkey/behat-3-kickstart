@@ -57,4 +57,27 @@ class HomepageContext extends PageObjectContext
         $this->getPage('Homepage')->iPressEnter();
     }
 
+    /**
+     * @Then /^I select first autocomplete option for "([^"]*)"$/
+     */
+    public function iSelectFirstAutcompleteOption($searchTerm)
+    {
+        $this->getPage('Homepage')->firstAutcompleteOptionSelect($searchTerm);
+    }
+
+    /**
+     * @Given /^I fill random email for "([^"]*)" field$/
+     */
+    public function iFillRandomEmailForField($emailAddress)
+    {
+        $this->getPage('Homepage')->randomEmailGenerator($emailAddress);
+    }
+
+    /**
+     * @Then /^I should see expected fields "([^"]*)"$/
+     */
+    public function iShouldSeeExpectedFields($fields)
+    {
+        $this->getPage('Homepage')->checkFieldsExistOnPage($fields);
+    }
 }
