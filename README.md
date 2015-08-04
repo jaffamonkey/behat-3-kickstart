@@ -10,8 +10,8 @@ WebAPIContext
 SETUP
 ==============
 
-From Behat repo root run:-
-* php composer.phar install
+From Behat repo root folder run following commands:-
+* composer install (install composer first, of course :))
 * npm install -g phantomjs (or brew install phantomjs)
 * wget http://selenium-release.storage.googleapis.com/2.44/selenium-server-standalone-2.44.0.jar
 
