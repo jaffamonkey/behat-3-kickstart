@@ -9,4 +9,4 @@ Feature: API testing
     And I get a successful response
     Then the response contains the following values:
       | title  | Some basic CLI web performance tools |
-      | status | publish                              |
+      | status | ok                              |

@@ -3,7 +3,7 @@
   "operations": {
     "JaffamonkeySite": {
       "httpMethod": "GET",
-      "uri": "wp-json/posts/11123"
+      "uri": "api/get_recent_posts/"
     }
   }
 }
