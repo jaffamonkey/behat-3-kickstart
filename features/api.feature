@@ -8,5 +8,5 @@ Feature: API testing
     When I called "JaffamonkeySite"
     And I get a successful response
     Then the response contains the following values:
-      | title  | cucumberjs/protractor &#8211; dealing with non-angular popups |
-      | status | ok                              |
+      | count   | 5   |
+      | status  | ok  |
