@@ -19,7 +19,7 @@
 "config": {
         "bin-dir": "bin/",
         "github-oauth": {
-            "github.com": "1f611e660bef4c34fe4e6edde0a61ee9c3c606ea"
+            "github.com": "69b36a0c5199dd84a9a20507a1b309cdb6fe9ef0"
         }
     }
 }
