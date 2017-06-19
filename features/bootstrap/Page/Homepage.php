@@ -205,16 +205,6 @@ if (exists) {
      * @return Page
      * @throws \Exception
      */
-    public function openTheBurgerMenu()
-    {
-        $this->find('css', 'i.fa.fa-bars')->click();
-    }
-
-    /**
-     * Click the main burger menu
-     * @return Page
-     * @throws \Exception
-     */
     public function iPressEnter()
     {
         $this->keys('11^M');
