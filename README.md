@@ -32,14 +32,12 @@ RUNNING PHANTOMJS TESTS
 * phantomjs --webdriver=4444
 * bin/behat -p phantomjs features
 
-
 PERFORMANCE/PARALLEL TESTING
 ============================
 
 * apt-get install parallel
 * java -jar selenium-server-standalone-2.43.1.jar --role hub
 * find features -iname '*.feature'|  parallel --gnu -j5 --group bin/behat --ansi {}
-
 
 CROSS BROWSER
 ============
