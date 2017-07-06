@@ -6,7 +6,6 @@ Feature: UI testing
   @phantomjs @javascript
   Scenario: The Gherkin Headless UI
     Given I am on "/"
-    And I click the burger menu
     And I fill in "Behat" for "s"
     And I am on "/?s=Behat"
     Then I should see "Behat"
@@ -15,7 +14,6 @@ Feature: UI testing
   @phantomjs @javascript
   Scenario: The Gherkin Browser UI
     Given I am on "/"
-    And I click the burger menu
     And I fill in "Behat" for "s"
     And I am on "/?s=Behat"
     Then I should see "Behat"
@@ -43,7 +41,6 @@ Feature: UI testing
   @phantomjs @javascript
   Scenario: I can publish a new blog post
     Given I am on the homepage
-    And I click the burger menu
     And I fill in "s" with "Behat"
     And I am on "/?s=Behat"
     Then I should see "Behat 3 Skeleton Repo"
