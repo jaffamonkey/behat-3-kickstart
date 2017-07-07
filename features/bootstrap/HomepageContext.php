@@ -58,6 +58,14 @@ class HomepageContext extends PageObjectContext
     }
 
     /**
+     * @Given I click the "([^"]*)" field
+     */
+    public function iClickTheField()
+    {
+        $this->getPage('Homepage')->clickOnField();
+    }
+
+    /**
      * @Then /^I select first autocomplete option for "([^"]*)"$/
      */
     public function iSelectFirstAutcompleteOption($searchTerm)
