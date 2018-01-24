@@ -19,4 +19,4 @@ before_script:
   - sleep 5
 
 script:
-  - php bin/behat -f pretty features
+  - php bin/behat -p phantomjs -f pretty features
