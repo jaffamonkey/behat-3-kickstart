@@ -7,7 +7,7 @@ Feature: UI testing
   Scenario: The Gherkin Headless UI
     Given I am on "/?q=behat"
     Then I should see "Behat"
-    And count of "100" instances of "Behat" exists on page
+    And count of "109" instances of "Behat" exists on page
 
   @phantomjs @javascript
   Scenario: The Gherkin Browser UI
