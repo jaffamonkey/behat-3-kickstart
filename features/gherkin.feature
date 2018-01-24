@@ -17,4 +17,4 @@ Feature: UI testing
   @phantomjs @javascript
   Scenario: I can publish a new blog post
     Given I am on "/?q=behat"
-    Then I should see "Behat 3 Skeleton Repo"
+    Then I should see "Behat documentation
