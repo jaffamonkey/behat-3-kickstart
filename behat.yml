@@ -10,7 +10,7 @@ default:
         - ProfileformContext
   extensions:
         Behat\WebApiExtension:
-            base_url: 'http://jaffamonkey.com'
+            base_url: 'https://duckduckgo.com'
         Drupal\DrupalExtension:
               blackbox: ~
         SensioLabs\Behat\PageObjectExtension:
@@ -23,7 +23,7 @@ default:
           templates:
             file: default.twig
         Behat\MinkExtension:
-            base_url: 'http://jaffamonkey.com'
+            base_url: 'https://duckduckgo.com'
             files_path: 'vendor'
             selenium2: ~
         emuse\BehatHTMLFormatter\BehatHTMLFormatterExtension:
@@ -36,7 +36,7 @@ default:
 phantomjs:
   extensions:
         Behat\MinkExtension:
-            base_url:  'http://jaffamonkey.com'
+            base_url:  'https://duckduckgo.com'
             default_session:  'selenium2'
             browser_name: phantomjs
             selenium2:
@@ -48,7 +48,7 @@ phantomjs:
 saucelabs_ie8:
   extensions:
     Behat\MinkExtension:
-      base_url:  'http://jaffamonkey.com'
+      base_url:  'https://duckduckgo.com'
       javascript_session:  'selenium2'
       selenium2:
         browser: iexplore

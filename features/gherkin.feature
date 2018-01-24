@@ -5,16 +5,16 @@ Feature: UI testing
 
   @phantomjs @javascript
   Scenario: The Gherkin Headless UI
-    Given I am on "/?s=Behat"
+    Given I am on "/?q=behat"
     Then I should see "Behat"
     And count of "24" instances of "Behat" exists on page
 
   @phantomjs @javascript
   Scenario: The Gherkin Browser UI
-    Given I am on "/?s=Behat"
+    Given I am on "/?q=behat"
     Then I should see "Behat"
 
   @phantomjs @javascript
   Scenario: I can publish a new blog post
-    Given I am on "/?s=Behat"
+    Given I am on "/?q=behat"
     Then I should see "Behat 3 Skeleton Repo"
